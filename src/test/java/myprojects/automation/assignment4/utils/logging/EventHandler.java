@@ -12,6 +12,26 @@ import java.util.stream.Collectors;
 public class EventHandler implements WebDriverEventListener {
 
     @Override
+    public void beforeAlertAccept(WebDriver webDriver) {
+
+    }
+
+    @Override
+    public void afterAlertAccept(WebDriver webDriver) {
+
+    }
+
+    @Override
+    public void afterAlertDismiss(WebDriver webDriver) {
+
+    }
+
+    @Override
+    public void beforeAlertDismiss(WebDriver webDriver) {
+
+    }
+
+    @Override
     public void beforeNavigateTo(String url, WebDriver driver) {
         CustomReporter.log("Navigate to " + url);
     }
@@ -74,8 +94,8 @@ public class EventHandler implements WebDriverEventListener {
 
     @Override
     public void beforeChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
-        String value = Arrays.stream(keysToSend).map(CharSequence::toString).collect(Collectors.joining());
-        CustomReporter.log(String.format("Change value of %s: %s\n", element.getTagName(), value));
+//        String value = Arrays.stream(keysToSend).map(CharSequence::toString).collect(Collectors.joining());
+//        CustomReporter.log(String.format("Change value of %s: %s\n", element.getTagName(), value));
     }
 
     @Override
